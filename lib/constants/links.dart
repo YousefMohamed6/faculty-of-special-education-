@@ -1,8 +1,7 @@
-const String kFacultyUrl = 'https://spe.tanta.edu.eg/';
 const String kBooKUrl = 'https://tdb.tanta.edu.eg/ebooks/';
 const String kRegisterUrl = 'https://tdb.tanta.edu.eg/spedu_reg/';
-const String kStudentEmailUrl =
-    'https://tdb.tanta.edu.eg/newemailservices/pw_reset.aspx';
+const String kEmailUrl =
+    'https://tdb.tanta.edu.eg/newemailservices/pw_reset.aspx/';
 const String kPaymentUrl = 'http://tdb2.tanta.edu.eg/paymentgateway/e_payment/';
 
 const String kFacebookUrl =

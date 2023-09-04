@@ -9,11 +9,11 @@ class Avatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
-      radius: radius == null ? 101 : radius! + 1,
+      radius: radius == null ? 125 : radius! + 1,
       backgroundColor: backgroundColor ?? Colors.grey,
       child: CircleAvatar(
-        radius: radius ?? 100,
-        backgroundImage: AssetImage(image),
+        radius: radius ?? 124,
+        backgroundImage: AssetImage(image,),
       ),
     );
   }

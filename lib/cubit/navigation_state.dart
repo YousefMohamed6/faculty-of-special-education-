@@ -4,10 +4,30 @@ sealed class NavigationState {}
 
 final class Initial extends NavigationState {}
 
-final class Payment extends NavigationState {}
+final class Payment extends NavigationState {
+  final String title;
+  final Widget body;
 
-final class Book extends NavigationState {}
+  Payment({required this.title, required this.body});
+}
 
-final class Rigester extends NavigationState {}
+final class Book extends NavigationState {
+  final String title;
+  final Widget body;
 
-final class Email extends NavigationState {}
+  Book({required this.title, required this.body});
+}
+
+final class Rigester extends NavigationState {
+  final String title;
+  final Widget body;
+
+  Rigester({required this.title, required this.body});
+}
+
+final class Email extends NavigationState {
+  final String title;
+  final Widget body;
+
+  Email({required this.title, required this.body});
+}

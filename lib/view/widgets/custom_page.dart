@@ -11,16 +11,27 @@ class CustomPageView extends StatelessWidget {
   final String url;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: CustomBottomBar(
-          currentIndex: BlocProvider.of<NavigationCubit>(context).currentIndex),
-      appBar: AppBar(
-        title: CustomText(
-          text: title,
-        ),
-        centerTitle: true,
-      ),
-      body: WebView(url: url),
+    return BlocBuilder<NavigationCubit, NavigationState>(
+      builder: (context, state) {
+        return Scaffold(
+          bottomNavigationBar: CustomBottomBar(
+              currentIndex:
+                  BlocProvider.of<NavigationCubit>(context).currentIndex),
+          appBar: AppBar(
+            leading: BackButton(
+              color: Colors.white,
+              onPressed: () {
+                BlocProvider.of<NavigationCubit>(context).navigate(4);
+              },
+            ),
+            title: CustomText(
+              text: title,
+            ),
+            centerTitle: true,
+          ),
+          body: WebViewApp(url: url),
+        );
+      },
     );
   }
 }
