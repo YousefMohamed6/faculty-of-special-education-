@@ -8,73 +8,69 @@ class CustomBottomBar extends StatelessWidget {
   final int currentIndex;
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<NavigationCubit, NavigationState>(
-      builder: (context, state) {
-        return BottomNavigationBar(
-          type: BottomNavigationBarType.shifting,
-          iconSize: 24,
-          selectedItemColor: Colors.black,
-          unselectedItemColor: Colors.black,
-          currentIndex: currentIndex,
-          onTap: (select) {
-            BlocProvider.of<NavigationCubit>(context).navigate(select);
-          },
-          items: const [
-            BottomNavigationBarItem(
-              activeIcon: Padding(
-                padding: EdgeInsets.only(top: 8.0),
-                child: CustomText(
-                  text: 'الكتاب الالكتروني',
-                  color: Colors.black,
-                ),
-              ),
-              label: '',
-              icon: Icon(
-                Icons.menu_book_outlined,
-              ),
-            ),
-            BottomNavigationBarItem(
-              activeIcon: Padding(
-                padding: EdgeInsets.only(top: 8.0),
-                child: CustomText(
-                  text: 'التحصيل الالكتروني',
-                  color: Colors.black,
-                ),
-              ),
-              label: '',
-              icon: Icon(
-                Icons.credit_card,
-              ),
-            ),
-            BottomNavigationBarItem(
-              activeIcon: Padding(
-                padding: EdgeInsets.only(top: 8.0),
-                child: CustomText(
-                  text: 'الايميل الجامعي',
-                  color: Colors.black,
-                ),
-              ),
-              label: '',
-              icon: Icon(
-                Icons.email_outlined,
-              ),
-            ),
-            BottomNavigationBarItem(
-              activeIcon: Padding(
-                padding: EdgeInsets.only(top: 8.0),
-                child: CustomText(
-                  text: 'تسجيل المقررات',
-                  color: Colors.black,
-                ),
-              ),
-              label: '',
-              icon: Icon(
-                Icons.checklist,
-              ),
-            ),
-          ],
-        );
+    return BottomNavigationBar(
+      type: BottomNavigationBarType.shifting,
+      iconSize: 24,
+      selectedItemColor: Colors.black,
+      unselectedItemColor: Colors.black,
+      currentIndex: currentIndex,
+      onTap: (select) {
+        BlocProvider.of<NavigationCubit>(context).navigate(select);
       },
+      items: const [
+        BottomNavigationBarItem(
+          activeIcon: Padding(
+            padding: EdgeInsets.only(top: 8.0),
+            child: CustomText(
+              text: 'الكتاب الالكتروني',
+              color: Colors.black,
+            ),
+          ),
+          label: '',
+          icon: Icon(
+            Icons.menu_book_outlined,
+          ),
+        ),
+        BottomNavigationBarItem(
+          activeIcon: Padding(
+            padding: EdgeInsets.only(top: 8.0),
+            child: CustomText(
+              text: 'التحصيل الالكتروني',
+              color: Colors.black,
+            ),
+          ),
+          label: '',
+          icon: Icon(
+            Icons.credit_card,
+          ),
+        ),
+        BottomNavigationBarItem(
+          activeIcon: Padding(
+            padding: EdgeInsets.only(top: 8.0),
+            child: CustomText(
+              text: 'الايميل الجامعي',
+              color: Colors.black,
+            ),
+          ),
+          label: '',
+          icon: Icon(
+            Icons.email_outlined,
+          ),
+        ),
+        BottomNavigationBarItem(
+          activeIcon: Padding(
+            padding: EdgeInsets.only(top: 8.0),
+            child: CustomText(
+              text: 'تسجيل المقررات',
+              color: Colors.black,
+            ),
+          ),
+          label: '',
+          icon: Icon(
+            Icons.checklist,
+          ),
+        ),
+      ],
     );
   }
 }

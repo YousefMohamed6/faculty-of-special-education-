@@ -1,9 +1,9 @@
+import 'package:faculty_of_special_education/constants/color.dart';
 import 'package:faculty_of_special_education/constants/images.dart';
 import 'package:faculty_of_special_education/constants/links.dart';
 import 'package:faculty_of_special_education/cubit/navigation_cubit.dart';
 import 'package:faculty_of_special_education/helper/helper_function/url_launcher.dart';
 import 'package:faculty_of_special_education/helper/helper_widget/asset_image.dart';
-import 'package:faculty_of_special_education/helper/helper_widget/avatar.dart';
 import 'package:faculty_of_special_education/helper/helper_widget/background.dart';
 import 'package:faculty_of_special_education/helper/helper_widget/custom_button.dart';
 import 'package:faculty_of_special_education/helper/helper_widget/custom_icon_button.dart';
@@ -23,20 +23,25 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Avatar(image: kcollegeImage),
+            const VerticalSizedBox(24),
+            CustomAssetImage(
+              imagePath: kcollegeImage,
+              width: (MediaQuery.sizeOf(context).width) / 1.5,
+            ),
             const VerticalSizedBox(16),
             const CustomText(
               text: 'كلية التربية النوعية',
               fontWeight: FontWeight.bold,
               fontSize: 32,
               fontFamily: 'Cairo',
+              color: Colors.white,
             ),
             const VerticalSizedBox(8),
             const CustomText(
               text: 'جامعة طنطا',
-              fontWeight: FontWeight.bold,
               fontSize: 28,
               fontFamily: 'Cairo',
+              color: Colors.white,
             ),
             const VerticalSizedBox(16),
             Row(
@@ -46,26 +51,31 @@ class HomePage extends StatelessWidget {
                   onPressed: () async {
                     await urlLauncher(url: kFacebookUrl);
                   },
-                  icon: const Icon(Icons.facebook_outlined),
-                  iconSize: 60,
-                ),
-                CustomIconButton(
-                  onPressed: () async {
-                    await urlLauncher(url: kMessangerUrl);
-                  },
-                  icon: const CustomAssetImage(
-                    imagePath: kMessangerImage,
+                  icon: const Icon(
+                    Icons.facebook,
+                    color: Colors.white,
                   ),
-                  iconSize: 60,
+                  iconSize: 50,
                 ),
                 CustomIconButton(
                   onPressed: () async {
                     await urlLauncher(url: kWebSiteUrl);
                   },
-                  icon: const CustomAssetImage(
-                    imagePath: kWebsiteImage,
+                  icon: const Icon(
+                    Icons.language,
+                    color: Colors.white,
                   ),
-                  iconSize: 60,
+                  iconSize: 50,
+                ),
+                CustomIconButton(
+                  onPressed: () async {
+                    await urlLauncher(url: kPhoneUrl);
+                  },
+                  icon: const Icon(
+                    Icons.call,
+                    color: Colors.white,
+                  ),
+                  iconSize: 50,
                 ),
                 CustomIconButton(
                   onPressed: () async {
@@ -73,8 +83,9 @@ class HomePage extends StatelessWidget {
                   },
                   icon: const Icon(
                     Icons.location_on,
+                    color: Colors.white,
                   ),
-                  iconSize: 60,
+                  iconSize: 50,
                 ),
               ],
             ),
@@ -83,11 +94,11 @@ class HomePage extends StatelessWidget {
               onPressed: () {
                 BlocProvider.of<NavigationCubit>(context).navigate(0);
               },
-              color: Colors.lightGreen,
+              color: Colors.white,
               child: const CustomText(
                 text: 'هيا بنا',
                 fontSize: 24,
-                color: Colors.white,
+                color: kPrimryColor,
               ),
             ),
           ],
