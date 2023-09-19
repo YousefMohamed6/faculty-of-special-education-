@@ -1,5 +1,5 @@
 import 'package:faculty_of_special_education/cubit/navigation_cubit.dart';
-import 'package:faculty_of_special_education/view/home_view.dart';
+import 'package:faculty_of_special_education/view/service_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: BlocProvider<NavigationCubit>(
         create: (context) => NavigationCubit(),
-        child: const HomeView(),
+        child: const ServiceView(),
       ),
     );
   }

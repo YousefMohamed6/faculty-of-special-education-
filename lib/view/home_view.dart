@@ -1,41 +1,36 @@
-import 'package:faculty_of_special_education/constants/links.dart';
-import 'package:faculty_of_special_education/cubit/navigation_cubit.dart';
-import 'package:faculty_of_special_education/view/home_page.dart';
-import 'package:faculty_of_special_education/view/widgets/custom_page.dart';
+import 'package:faculty_of_special_education/helper/helper_widget/background.dart';
+import 'package:faculty_of_special_education/helper/helper_widget/vertical_sizebox.dart';
+import 'package:faculty_of_special_education/view/widgets/app_data.dart';
+import 'package:faculty_of_special_education/view/widgets/app_icon.dart';
+import 'package:faculty_of_special_education/view/widgets/app_name.dart';
+import 'package:faculty_of_special_education/view/widgets/app_subtitle.dart';
+import 'package:faculty_of_special_education/view/widgets/next_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<NavigationCubit, NavigationState>(
-      builder: (context, state) {
-        if (state is Initial) {
-          return const HomePage();
-        } else if (state is Book) {
-          return const CustomPageView(
-            title: 'الكتاب الالكتروني',
-            url: kBooKUrl,
-          );
-        } else if (state is Payment) {
-          return const CustomPageView(
-            title: 'التحصيل الالكتروني',
-            url: kPaymentUrl,
-          );
-        } else if (state is Email) {
-          return const CustomPageView(
-            title: 'الايميل الجامعي',
-            url: kEmailUrl,
-          );
-        } else {
-          return const CustomPageView(
-            title: 'تسجيل المقررات',
-            url: kRegisterUrl,
-          );
-        }
-      },
+    return const Scaffold(
+      body: Background(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            VerticalSizedBox(24),
+            AppIcon(),
+            VerticalSizedBox(16),
+            AppName(),
+            VerticalSizedBox(8),
+            AppSubTitle(),
+            VerticalSizedBox(16),
+            AppData(),
+            VerticalSizedBox(32),
+            NextButton(),
+          ],
+        ),
+      ),
     );
   }
 }
