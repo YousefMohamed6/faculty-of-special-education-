@@ -1,5 +1,6 @@
 import 'package:faculty_of_special_education/constants/links.dart';
 import 'package:faculty_of_special_education/cubit/navigation_cubit.dart';
+import 'package:faculty_of_special_education/generated/l10n.dart';
 import 'package:faculty_of_special_education/view/home_view.dart';
 import 'package:faculty_of_special_education/view/widgets/service_view_body.dart';
 import 'package:flutter/material.dart';
@@ -15,23 +16,23 @@ class ServiceView extends StatelessWidget {
         if (state is Initial) {
           return const HomeView();
         } else if (state is Book) {
-          return const ServiceViewBody(
-            title: 'الكتاب الالكتروني',
+          return ServiceViewBody(
+            title: S.of(context).book,
             url: kBooKUrl,
           );
         } else if (state is Payment) {
-          return const ServiceViewBody(
-            title: 'التحصيل الالكتروني',
+          return ServiceViewBody(
+            title: S.of(context).payment,
             url: kPaymentUrl,
           );
         } else if (state is Email) {
-          return const ServiceViewBody(
-            title: 'الايميل الجامعي',
+          return ServiceViewBody(
+            title: S.of(context).email,
             url: kEmailUrl,
           );
         } else {
-          return const ServiceViewBody(
-            title: 'تسجيل المقررات',
+          return ServiceViewBody(
+            title: S.of(context).register,
             url: kRegisterUrl,
           );
         }

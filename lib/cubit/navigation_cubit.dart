@@ -4,6 +4,13 @@ part 'navigation_state.dart';
 
 class NavigationCubit extends Cubit<NavigationState> {
   NavigationCubit() : super(Initial());
+  bool isArabic = true;
+  String language = 'ar';
+  void changeLanguage() {
+    isArabic = !isArabic;
+    emit(Initial());
+  }
+
   int currentIndex = 0;
   void navigate(int select) {
     currentIndex = select;

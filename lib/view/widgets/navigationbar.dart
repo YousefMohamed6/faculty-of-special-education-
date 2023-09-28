@@ -1,4 +1,5 @@
 import 'package:faculty_of_special_education/cubit/navigation_cubit.dart';
+import 'package:faculty_of_special_education/generated/l10n.dart';
 import 'package:faculty_of_special_education/helper/helper_widget/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,56 +18,56 @@ class CustomBottomBar extends StatelessWidget {
       onTap: (select) {
         BlocProvider.of<NavigationCubit>(context).navigate(select);
       },
-      items: const [
+      items: [
         BottomNavigationBarItem(
           activeIcon: Padding(
-            padding: EdgeInsets.only(top: 8.0),
+            padding: const EdgeInsets.only(top: 8.0),
             child: CustomText(
-              text: 'الكتاب الالكتروني',
+              text: S.of(context).book,
               color: Colors.black,
             ),
           ),
           label: '',
-          icon: Icon(
+          icon: const Icon(
             Icons.menu_book_outlined,
           ),
         ),
         BottomNavigationBarItem(
           activeIcon: Padding(
-            padding: EdgeInsets.only(top: 8.0),
+            padding: const EdgeInsets.only(top: 8.0),
             child: CustomText(
-              text: 'التحصيل الالكتروني',
+              text: S.of(context).payment,
               color: Colors.black,
             ),
           ),
           label: '',
-          icon: Icon(
+          icon: const Icon(
             Icons.credit_card,
           ),
         ),
         BottomNavigationBarItem(
           activeIcon: Padding(
-            padding: EdgeInsets.only(top: 8.0),
+            padding: const EdgeInsets.only(top: 8.0),
             child: CustomText(
-              text: 'الايميل الجامعي',
+              text: S.of(context).email,
               color: Colors.black,
             ),
           ),
           label: '',
-          icon: Icon(
+          icon: const Icon(
             Icons.email_outlined,
           ),
         ),
         BottomNavigationBarItem(
           activeIcon: Padding(
-            padding: EdgeInsets.only(top: 8.0),
+            padding: const EdgeInsets.only(top: 8.0),
             child: CustomText(
-              text: 'تسجيل المقررات',
+              text: S.of(context).register,
               color: Colors.black,
             ),
           ),
           label: '',
-          icon: Icon(
+          icon: const Icon(
             Icons.checklist,
           ),
         ),
