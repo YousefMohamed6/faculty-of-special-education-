@@ -9,7 +9,7 @@ class AppIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomAssetImage(
       imagePath: kcollegeImage,
-      width: (MediaQuery.sizeOf(context).width) / 1.5,
+      width: (MediaQuery.sizeOf(context).width) * 0.6,
     );
   }
 }

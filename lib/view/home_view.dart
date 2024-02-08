@@ -1,4 +1,5 @@
 import 'package:faculty_of_special_education/helper/helper_widget/background.dart';
+import 'package:faculty_of_special_education/helper/helper_widget/custom_text.dart';
 import 'package:faculty_of_special_education/helper/helper_widget/vertical_sizebox.dart';
 import 'package:faculty_of_special_education/view/widgets/app_data.dart';
 import 'package:faculty_of_special_education/view/widgets/app_icon.dart';
@@ -31,6 +32,14 @@ class HomeView extends StatelessWidget {
               AppData(),
               VerticalSizedBox(32),
               NextButton(),
+              Expanded(child: VerticalSizedBox(32)),
+              CustomText(
+                text: "Powered By : Yousef Mohamed",
+                color: Colors.white,
+                fontWeight: FontWeight.w300,
+                fontSize: 18,
+              ),
+              VerticalSizedBox(32),
             ],
           ),
         ),
