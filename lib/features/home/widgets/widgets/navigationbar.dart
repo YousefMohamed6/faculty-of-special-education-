@@ -1,22 +1,24 @@
-import 'package:faculty_of_special_education/cubit/navigation_cubit.dart';
+import 'package:faculty_of_special_education/core/widgets/custom_text.dart';
+import 'package:faculty_of_special_education/features/services/cubit/navigation_cubit.dart';
 import 'package:faculty_of_special_education/generated/l10n.dart';
-import 'package:faculty_of_special_education/helper/helper_widget/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CustomBottomBar extends StatelessWidget {
-  const CustomBottomBar({super.key, required this.currentIndex});
-  final int currentIndex;
+  const CustomBottomBar({super.key});
+
   @override
   Widget build(BuildContext context) {
+    int currentIndex = BlocProvider.of<ServicesCubit>(context).currentIndex;
     return BottomNavigationBar(
+      backgroundColor: Colors.blue,
       type: BottomNavigationBarType.shifting,
       iconSize: 24,
       selectedItemColor: Colors.black,
       unselectedItemColor: Colors.black,
       currentIndex: currentIndex,
       onTap: (select) {
-        BlocProvider.of<NavigationCubit>(context).navigate(select);
+        BlocProvider.of<ServicesCubit>(context).navigate(currentIndex: select);
       },
       items: [
         BottomNavigationBarItem(

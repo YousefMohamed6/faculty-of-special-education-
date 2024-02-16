@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:webview_flutter/webview_flutter.dart';
 
 class WebViewApp extends StatefulWidget {
@@ -22,9 +21,7 @@ class _WebViewAppState extends State<WebViewApp> {
         ..setNavigationDelegate(
           NavigationDelegate(
             onProgress: (int progress) {},
-            onPageStarted: (String url) {
-              () {};
-            },
+            onPageStarted: (String url) {},
             onPageFinished: (String url) {},
             onWebResourceError: (WebResourceError error) {},
             onNavigationRequest: (NavigationRequest request) {

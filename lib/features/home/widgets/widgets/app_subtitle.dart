@@ -1,5 +1,5 @@
+import 'package:faculty_of_special_education/core/widgets/custom_text.dart';
 import 'package:faculty_of_special_education/generated/l10n.dart';
-import 'package:faculty_of_special_education/helper/helper_widget/custom_text.dart';
 import 'package:flutter/material.dart';
 
 class AppSubTitle extends StatelessWidget {
@@ -9,7 +9,7 @@ class AppSubTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomText(
       text: S.of(context).appSubTitle,
-      fontSize: 26,
+      fontSize: MediaQuery.sizeOf(context).height * 0.032,
       fontFamily: 'Cairo',
       color: Colors.white,
     );

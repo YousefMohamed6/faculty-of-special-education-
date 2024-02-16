@@ -1,5 +1,5 @@
+import 'package:faculty_of_special_education/core/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
-import 'package:faculty_of_special_education/helper/helper_widget/custom_text.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key, required this.title, this.actions});

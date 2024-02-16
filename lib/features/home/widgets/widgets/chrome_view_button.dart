@@ -1,4 +1,4 @@
-import 'package:faculty_of_special_education/helper/helper_function/url_launcher.dart';
+import 'package:faculty_of_special_education/core/uitls/function/url_launcher.dart';
 import 'package:flutter/material.dart';
 
 class ChromeViewButton extends StatelessWidget {
