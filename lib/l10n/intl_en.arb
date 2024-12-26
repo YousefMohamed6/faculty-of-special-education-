@@ -5,5 +5,6 @@
         "book": "E-Book",
         "register": "C-Register",
         "email": "E-Mail",
-        "payment": "E-Collection"
+        "payment": "E-Collection",
+        "settings":"Settings"
 }

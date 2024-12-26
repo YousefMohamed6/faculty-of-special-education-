@@ -29,6 +29,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "email": MessageLookupByLibrary.simpleMessage("E-Mail"),
         "letsgo": MessageLookupByLibrary.simpleMessage("Get Start"),
         "payment": MessageLookupByLibrary.simpleMessage("E-Collection"),
-        "register": MessageLookupByLibrary.simpleMessage("C-Register")
+        "register": MessageLookupByLibrary.simpleMessage("C-Register"),
+        "settings": MessageLookupByLibrary.simpleMessage("Settings"),
       };
 }

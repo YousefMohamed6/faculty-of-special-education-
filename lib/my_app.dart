@@ -1,5 +1,5 @@
-import 'package:faculty_of_special_education/features/home/home_view.dart';
-import 'package:faculty_of_special_education/features/services/cubit/navigation_cubit.dart';
+import 'package:faculty_of_special_education/features/home/presentation/pages/home_view.dart';
+import 'package:faculty_of_special_education/features/settings/presentation/manager/cubit/settings_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -12,19 +12,19 @@ class MyApp extends StatelessWidget {
   factory MyApp() => instance;
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ServicesCubit, ServicesState>(builder: (context, state) {
+    return BlocBuilder<SettingsCubit, SettingsState>(builder: (context, state) {
       return PopScope(
         child: MaterialApp(
           locale: Locale(
-            BlocProvider.of<ServicesCubit>(context).isArabic ? 'ar' : 'en',
+            BlocProvider.of<SettingsCubit>(context).language,
           ),
           localizationsDelegates: const [
-            S.delegate,
+            AppLocalization.delegate,
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: S.delegate.supportedLocales,
+          supportedLocales: AppLocalization.delegate.supportedLocales,
           debugShowCheckedModeBanner: false,
           home: const HomeView(),
         ),

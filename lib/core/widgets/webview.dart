@@ -1,40 +1,37 @@
+import 'package:faculty_of_special_education/features/services/presentation/manager/navigation_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class WebViewApp extends StatefulWidget {
-  const WebViewApp({
+class CustomWebViewWidget extends StatefulWidget {
+  const CustomWebViewWidget({
     super.key,
     required this.url,
   });
   final String url;
   @override
-  State<WebViewApp> createState() => _WebViewAppState();
+  State<CustomWebViewWidget> createState() => _CustomWebViewWidgetState();
 }
 
-class _WebViewAppState extends State<WebViewApp> {
+class _CustomWebViewWidgetState extends State<CustomWebViewWidget> {
+  @override
+  void initState() {
+    super.initState();
+    _initController(widget.url).then((_) {
+      setState(() {});
+    });
+  }
+
+  Future<void> _initController(String url) async {
+    final ServicesCubit cubit = context.read<ServicesCubit>();
+    _controller = cubit.webViewController..loadRequest(Uri.parse(url));
+  }
+
+  late WebViewController _controller;
   @override
   Widget build(BuildContext context) {
     return WebViewWidget(
-      controller: WebViewController()
-        ..setJavaScriptMode(JavaScriptMode.unrestricted)
-        ..setBackgroundColor(const Color(0xffffffff))
-        ..setNavigationDelegate(
-          NavigationDelegate(
-            onProgress: (int progress) {},
-            onPageStarted: (String url) {},
-            onPageFinished: (String url) {},
-            onWebResourceError: (WebResourceError error) {},
-            onNavigationRequest: (NavigationRequest request) {
-              if (request.url.startsWith('https://flutter.dev')) {
-                return NavigationDecision.prevent;
-              }
-              return NavigationDecision.navigate;
-            },
-          ),
-        )
-        ..loadRequest(
-          Uri.parse(widget.url),
-        ),
+      controller: _controller,
     );
   }
 }

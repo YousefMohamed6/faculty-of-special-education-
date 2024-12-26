@@ -29,6 +29,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "email": MessageLookupByLibrary.simpleMessage("الايميل الجامعي"),
         "letsgo": MessageLookupByLibrary.simpleMessage("هيا بنا"),
         "payment": MessageLookupByLibrary.simpleMessage("التحصيل الالكتروني"),
-        "register": MessageLookupByLibrary.simpleMessage("تسجيل المقررات")
+        "register": MessageLookupByLibrary.simpleMessage("تسجيل المقررات"),
+        "settings": MessageLookupByLibrary.simpleMessage("الاعدادات"),
       };
 }
