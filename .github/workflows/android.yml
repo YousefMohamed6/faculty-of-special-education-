@@ -32,7 +32,7 @@ jobs:
             ruby-version: 3.3.7
             bundler-cache: true
             working-directory: android
-        
+        # 
         - name: build and distribute App
           env: 
             FIREBASE_TOKEN: ${{ secrets.firebase_cli_token }}
