@@ -10,7 +10,7 @@ on:
 
 jobs:
     distribution_to_firebase:
-        runs-on: ubuntu-latest
+        runs-on: windows-latest
         steps:
         - name : Checkout the code 
           uses: actions/checkout@v2
@@ -29,7 +29,7 @@ jobs:
         - name: Setup Ruby
           uses: ruby/setup-ruby@v1
           with:
-            ruby-version: 3.3.7
+            ruby-version: 3.4.1
             bundler-cache: true
             working-directory: android
         # 
