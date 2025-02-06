@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "670184640142",
+    "project_id": "facult-of-special-education",
+    "storage_bucket": "facult-of-special-education.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:670184640142:android:a3c6f6b82dfbf6635583df",
+        "android_client_info": {
+          "package_name": "com.tanta.faculty_of_special_education"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqtDbIp7R8pORj2h-fTcpPeWsSGkOSty0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
