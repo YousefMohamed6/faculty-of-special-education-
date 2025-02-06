@@ -12,7 +12,7 @@ platform :android do
     # Distribute the APK via Firebase
     firebase_app_distribution(
       app: "1:670184640142:android:a3c6f6b82dfbf6635583df",
-      firebase_cli_token: "",
+      firebase_cli_token: ENV["firebase_cli_token"],
       android_artifact_type: "APK",
       android_artifact_path: "../build/app/outputs/flutter-apk/app-release.apk",
       testers: "yo7sef1980@gmail.com",
